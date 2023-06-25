@@ -1,16 +1,17 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './App.css'
-import Home from './Pages/Home/Home'
-import MyOrders from './Pages/MyOrders/MyOrders'
-import MyAccount from './Pages/MyAccount/MyAccount'
-import Signin from './Pages/Signin/Signin'
-import MyOrder from './Pages/MyOrder/MyOrder'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import Home from './Pages/Home/Home';
+import MyOrders from './Pages/MyOrders/MyOrders';
+import MyAccount from './Pages/MyAccount/MyAccount';
+import Signin from './Pages/Signin/Signin';
+import MyOrder from './Pages/MyOrder/MyOrder';
 import Notfound from './Pages/Notfound';
+import Navbar from './Components/navbar';
 
-
-const App =() => {
+const App = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/My-orders" element={<MyOrders />} />
@@ -20,7 +21,7 @@ const App =() => {
         <Route path="*" element={<Notfound />} />
       </Routes>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;

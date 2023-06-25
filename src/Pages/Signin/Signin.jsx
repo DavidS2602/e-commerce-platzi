@@ -1,8 +1,10 @@
+import Layout from "../../Components/Layout";
+
 const Signin = () => {
     return (
-        <div>
+        <Layout>
             <p>Signin</p>
-        </div>
+        </Layout>
     );
 }
 
