@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { AiOutlineMenu } from "react-icons/ai"
 
 const navbar = () => {
     const activeStyle = "underline underline-offset-4";
@@ -98,6 +99,9 @@ const navbar = () => {
                 </li>
                 <li>
                     🛒 0
+                </li>
+                <li className="">
+                    <AiOutlineMenu />
                 </li>
             </ul>
         </nav>
