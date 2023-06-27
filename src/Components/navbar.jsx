@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { AiOutlineMenu } from "react-icons/ai"
+import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai"
 
 const navbar = () => {
     const activeStyle = "underline underline-offset-4";
@@ -11,7 +11,7 @@ const navbar = () => {
                         Shopi
                     </NavLink>
                 </li>
-                <li>
+                <li className="tablet:hidden">
                     <NavLink
                         to='/'
                         className={({ isActive }) =>
@@ -20,7 +20,7 @@ const navbar = () => {
                         All
                     </NavLink>
                 </li>
-                <li>
+                <li className="tablet:hidden">
                     <NavLink
                         to='/clothes'
                         className={({ isActive }) =>
@@ -29,7 +29,7 @@ const navbar = () => {
                         Clothes
                     </NavLink>
                 </li>
-                <li>
+                <li className="tablet:hidden">
                     <NavLink
                         to='/electronics'
                         className={({ isActive }) =>
@@ -38,7 +38,7 @@ const navbar = () => {
                         Electronics
                     </NavLink>
                 </li>
-                <li>
+                <li className="tablet:hidden">
                     <NavLink
                         to='/furnitures'
                         className={({ isActive }) =>
@@ -47,7 +47,7 @@ const navbar = () => {
                         Furnitures
                     </NavLink>
                 </li>
-                <li>
+                <li className="tablet:hidden">
                     <NavLink
                         to='/toys'
                         className={({ isActive }) =>
@@ -56,7 +56,7 @@ const navbar = () => {
                         Toys
                     </NavLink>
                 </li>
-                <li>
+                <li className="tablet:hidden">
                     <NavLink
                         to='/others'
                         className={({ isActive }) =>
@@ -70,7 +70,7 @@ const navbar = () => {
                 <li className='text-black/60'>
                     davidS26@google.com
                 </li>
-                <li>
+                <li className="tablet:hidden">
                     <NavLink
                         to='/my-orders'
                         className={({ isActive }) =>
@@ -79,7 +79,7 @@ const navbar = () => {
                         My Orders
                     </NavLink>
                 </li>
-                <li>
+                <li className="tablet:hidden">
                     <NavLink
                         to='/my-account'
                         className={({ isActive }) =>
@@ -88,7 +88,7 @@ const navbar = () => {
                         My Account
                     </NavLink>
                 </li>
-                <li>
+                <li className="tablet:hidden">
                     <NavLink
                         to='/sing-in'
                         className={({ isActive }) =>
@@ -97,10 +97,10 @@ const navbar = () => {
                         Sign In
                     </NavLink>
                 </li>
-                <li>
-                    🛒 0
-                </li>
                 <li className="">
+                <AiOutlineShoppingCart />
+                </li>
+                <li className="xl:hidden">
                     <AiOutlineMenu />
                 </li>
             </ul>
