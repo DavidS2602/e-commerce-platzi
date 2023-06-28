@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineShoppingCart } from "react-icons/ai"
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Sidebar from './Sidebar';
+import { ShoppingCartContext } from "../ShoppingCartContext";
 
 const navbar = () => {
+    const context = useContext(ShoppingCartContext);
     const activeStyle = "underline underline-offset-4";
     const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
     const handleSideMenu = () => {
@@ -107,9 +109,10 @@ const navbar = () => {
                         </NavLink>
                     </li>
                     <li className="">
-                        <AiOutlineShoppingCart />
+                        <AiOutlineShoppingCart size={20} />
+                        <span className="text-[10px] absolute right-14 top-1 bg-pink-300 px-1 rounded-full font-semibold z-10">{context.count}</span>
                     </li>
-                    <li onClick={handleSideMenu} className="xl:hidden hover:cursor-pointer">
+                    <li onClick={handleSideMenu} className="xl:hidden hover:cursor-pointer relative">
                         <AiOutlineMenu />
                     </li>
                 </ul>
