@@ -110,7 +110,7 @@ const navbar = () => {
                     </li>
                     <li className="">
                         <AiOutlineShoppingCart size={20} />
-                        <span className="text-[10px] absolute right-14 top-1 bg-pink-300 px-1 rounded-full font-semibold z-10">{context.count}</span>
+                        <span className="text-[10px] absolute right-14 top-1 bg-pink-300 px-1 rounded-full font-semibold z-10 xl:right-7">{context.count}</span>
                     </li>
                     <li onClick={handleSideMenu} className="xl:hidden hover:cursor-pointer relative">
                         <AiOutlineMenu />
