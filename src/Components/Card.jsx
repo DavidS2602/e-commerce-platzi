@@ -8,6 +8,15 @@ const Card = ({ data }) => {
         context.openProductDetail();
         context.setProductShow(data);
     }
+
+    const addProductsToCart = (event, data) => {
+        event.stopPropagation();
+        context.setCount(context.count + 1)
+        context.setCartProducts([...context.cartProducts, data]);
+        context.openCheckoutSide()
+        console.log('cart', context.cartProducts)
+    }
+
     return (
         <div
             onClick={() => showProductDetail(data)}
@@ -24,7 +33,7 @@ const Card = ({ data }) => {
                 />
                 <div
                     className="absolute top-2 right-1 flex justify-center items-center rounded-full w-6 h-6"
-                    onClick={() => context.setCount(context.count + 1)}
+                    onClick={(event) => addProductsToCart(event,data)}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

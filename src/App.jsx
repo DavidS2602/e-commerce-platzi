@@ -8,6 +8,7 @@ import MyOrder from './Pages/MyOrder/MyOrder';
 import Notfound from './Pages/Notfound';
 import Navbar from './Components/navbar';
 import ShoppingCartProvider from './ShoppingCartContext';
+import CheckoutSideMenu from './Components/CheckoutSideMenu';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="*" element={<Notfound />} />
         </Routes>
       </BrowserRouter>
+      <CheckoutSideMenu />
     </ShoppingCartProvider>
   );
 };
