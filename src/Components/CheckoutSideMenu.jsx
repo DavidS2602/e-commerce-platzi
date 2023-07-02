@@ -28,6 +28,7 @@ const CheckoutSideMenu = () => {
                     </svg>
                 </span>
             </div>
+            <div className="px-6 overflow-y-auto">
             {
                 context.cartProducts.map((product) => ( //Con los paréntesis indicamos que estamos haciendo un return
                     <OrderCard
@@ -38,6 +39,7 @@ const CheckoutSideMenu = () => {
                         />
                 ))
             }
+            </div>
         </aside>
     );
 };
