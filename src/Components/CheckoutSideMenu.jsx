@@ -4,6 +4,12 @@ import OrderCard from "./OrderCard";
 
 const CheckoutSideMenu = () => {
     const context = useContext(ShoppingCartContext);
+
+    const handleDelete = (id) => {
+        const filterProducts = context.cartProducts.filter(product => product.id !== id);
+        context.setCartProducts(filterProducts);
+    }
+
     return (
         <aside
             className={`${context.isCheckoutSideOpen ? "flex" : "hidden"
@@ -32,10 +38,12 @@ const CheckoutSideMenu = () => {
             {
                 context.cartProducts.map((product) => ( //Con los paréntesis indicamos que estamos haciendo un return
                     <OrderCard
+                        id = {product.id}
                         title = {product.title}
                         imageUrl = {product.images[0]}
                         price = {product.price}
                         key = {product.id}
+                        handleDelete = {handleDelete}
                         />
                 ))
             }

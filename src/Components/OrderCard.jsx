@@ -1,5 +1,5 @@
 const OrderCard = props => {
-    const { id, title, imageUrl, price } = props
+    const { id, title, imageUrl, price, handleDelete } = props
     return (
         <div className="flex justify-between items-center my-2">
             <div className="flex items-center gap-2">
@@ -18,6 +18,7 @@ const OrderCard = props => {
                         strokeWidth={1.5}
                         stroke="currentColor"
                         className="w-6 h-6"
+                        onClick={() => handleDelete(id)}
                     >
                         <path
                             strokeLinecap="round"
