@@ -1,6 +1,7 @@
 import { ShoppingCartContext } from "../ShoppingCartContext";
 import { useContext } from "react";
 import OrderCard from "./OrderCard";
+import { totalPrice } from './../utils/index';
 
 const CheckoutSideMenu = () => {
     const context = useContext(ShoppingCartContext);
@@ -48,6 +49,12 @@ const CheckoutSideMenu = () => {
                 ))
             }
             </div>
+            <footer className="flex justify-between items-center text-xl">
+                <span className="font-semibold">Total:</span>
+                <span className="font-semibold text-green-500 pr-8 p-2">
+                    ${totalPrice(context.cartProducts)}
+                </span>
+            </footer>
         </aside>
     );
 };
