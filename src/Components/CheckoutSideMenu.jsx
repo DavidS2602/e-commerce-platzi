@@ -2,6 +2,7 @@ import { ShoppingCartContext } from "../ShoppingCartContext";
 import { useContext } from "react";
 import OrderCard from "./OrderCard";
 import { totalPrice } from './../utils/index';
+import { NavLink } from "react-router-dom";
 
 const CheckoutSideMenu = () => {
     const context = useContext(ShoppingCartContext);
@@ -9,6 +10,19 @@ const CheckoutSideMenu = () => {
     const handleDelete = (id) => {
         const filterProducts = context.cartProducts.filter(product => product.id !== id);
         context.setCartProducts(filterProducts);
+    }
+
+    const handleCheckout = () => {
+        const orderToAdd = {
+            date: '2021-10-10',
+            products: context.cartProducts,
+            totalProducts: context.cartProducts.length,
+            totalPrice: totalPrice(context.cartProducts)
+        }
+        
+        context.setOrder([...context.order, orderToAdd]);
+        context.setCartProducts([]);
+        context.closeCheckoutSide
     }
 
     return (
@@ -49,12 +63,15 @@ const CheckoutSideMenu = () => {
                 ))
             }
             </div>
-            <footer className="flex justify-between items-center text-xl">
+            <div className="flex justify-between items-center text-xl mb-2">
                 <span className="font-semibold">Total:</span>
                 <span className="font-semibold text-green-500 pr-8 p-2">
                     ${totalPrice(context.cartProducts)}
                 </span>
-            </footer>
+            </div>
+            <NavLink to='/My-orders/last'>
+                <button onClickCapture={context.closeCheckoutSide} className="w-full bg-green-500 text-white rounded-lg p-2 mt-4 hover:bg-green-400 transition-colors duration-300" onClick={() => handleCheckout()}>Checkout</button>
+            </NavLink>
         </aside>
     );
 };
