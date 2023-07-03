@@ -23,8 +23,8 @@ const App = () => {
           <Route path="/My-order" element={<MyOrder />} />
           <Route path="*" element={<Notfound />} />
         </Routes>
-      </BrowserRouter>
       <CheckoutSideMenu />
+      </BrowserRouter>
     </ShoppingCartProvider>
   );
 };
