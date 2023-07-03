@@ -10,17 +10,15 @@ const MyOrder = () => {
         <Layout>
             <p>My Order</p>
             <div className="px-6 overflow-y-auto flex flex-col w-80">
-            {
-                context.order?.slice(-1)[0].products.map((product) => ( //Con los paréntesis indicamos que estamos haciendo un return
-                    <OrderCard
-                        id = {product.id}
-                        title = {product.title}
-                        imageUrl = {product.images[0]}
-                        price = {product.price}
-                        key = {product.id}
-                        />
-                ))
-            }
+            {context.order?.slice(-1)[0].products.map((product) => (
+                <OrderCard
+                    key={product.id}
+                    product={product.id}
+                    title={product.title}
+                    imageUrl={product.images}
+                    price={product.price}
+                />
+            ))}
             </div>
         </Layout>
     );
