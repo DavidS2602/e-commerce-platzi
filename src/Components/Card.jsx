@@ -15,7 +15,6 @@ const Card = ({ data }) => {
         context.setCount(context.count + 1)
         context.setCartProducts([...context.cartProducts, data]);
         context.openCheckoutSide()
-        console.log('cart', context.cartProducts)
     }
 
     const renderIcon = (id) => {
@@ -38,9 +37,9 @@ const Card = ({ data }) => {
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
-                        strokeWidth={1.5}
+                        strokeWidth={2.0}
                         stroke="currentColor"
-                        className="w-6 h-6 cursor-pointer hover:text-red-700 hover:transition-colors"
+                        className="w-6 h-6 text-white cursor-pointer hover:text-red-700 hover:transition-colors"
                     >
                         <path
                             strokeLinecap="round"

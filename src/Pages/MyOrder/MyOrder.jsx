@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import Layout from "../../Components/Layout";
 import { ShoppingCartContext } from "../../ShoppingCartContext";
 import OrderCard from "../../Components/OrderCard";
-import { BsChevronDoubleLeft } from "react-icons/bs";
+import { AiOutlineLeft } from "react-icons/ai";
 
 const MyOrder = () => {
     const context = useContext(ShoppingCartContext);
@@ -15,7 +15,7 @@ const MyOrder = () => {
             <div className="flex w-80 relative justify-center items-center mb-6">
                 <NavLink to="/My-orders" className="absolute left-0">
                     <div>
-                        <BsChevronDoubleLeft size={20} color="black" />
+                        <AiOutlineLeft size={20} color="black" />
                     </div>
                 </NavLink>
                 <h1>My Order</h1>

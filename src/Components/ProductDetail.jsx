@@ -3,7 +3,6 @@ import { useContext } from "react";
 
 const ProductDetail = () => {
     const context = useContext(ShoppingCartContext);
-    console.log("PRODUCT TO SHOW", context.productShow);
     return (
         <aside
             className={`${context.isProductDetailOpen ? "flex" : "hidden"

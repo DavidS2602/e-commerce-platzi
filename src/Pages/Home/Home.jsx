@@ -7,15 +7,15 @@ const Home = () => {
     const context = useContext(ShoppingCartContext);
 
     const renderView = () => {
-        const itemsToRender = context.searchByTitle
-            ? context.filteredItems
-            : context.items;
-        if (itemsToRender?.length > 0) {
-            return itemsToRender.map((item) => <Card key={item.id} data={item} />);
+        if (context.filteredItems && context.filteredItems.length > 0) {
+            return context.filteredItems.map((product) => (
+                <Card key={product.id} data={product} />
+            ));
         } else {
-            return <h1 className="text-center text-2xl">No products found</h1>;
+            return <div>We don't have anything</div>;
         }
     };
+
 
     return (
         <Layout>
@@ -28,7 +28,7 @@ const Home = () => {
                 placeholder="Search a product"
                 className="rounded-lg border border-black w-80 p-4 mb-4"
             />
-            <div className="grid grid-cols-4 gap-4 mobile:flex mobile:flex-col tablet:grid-cols-2">
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {renderView()}
             </div>
             <ProductDetail />
