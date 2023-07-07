@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { ShoppingCartContext } from "../ShoppingCartContext";
+
 const Sidebar = () => {
     const activeStyle = "underline underline-offset-4";
+    const context = useContext(ShoppingCartContext)
     return (
         <nav className="flex items-center justify-center fixed top-12 right-0 w-64 bg-white p-4 z-10 rounded-l-md">
             <ul className='flex flex-col items-center gap-4 ml-4'>
@@ -12,6 +16,7 @@ const Sidebar = () => {
                 <li className="hover:bg-slate-100 transition-colors duration-300 px-2 rounded-md">
                     <NavLink
                         to='/'
+                        onClick={() => context.setSearchByCategory("")}
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
@@ -21,6 +26,7 @@ const Sidebar = () => {
                 <li className="hover:bg-slate-100 transition-colors duration-300 px-2 rounded-md">
                     <NavLink
                         to='/clothes'
+                        onClick={() => context.setSearchByCategory("clothes")}
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
@@ -30,6 +36,7 @@ const Sidebar = () => {
                 <li className="hover:bg-slate-100 transition-colors duration-300 px-2 rounded-md">
                     <NavLink
                         to='/electronics'
+                        onClick={() => context.setSearchByCategory("electronics")}
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
@@ -39,6 +46,7 @@ const Sidebar = () => {
                 <li className="hover:bg-slate-100 transition-colors duration-300 px-2 rounded-md">
                     <NavLink
                         to='/furnitures'
+                        onClick={() => context.setSearchByCategory("furnitures")}
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
@@ -48,6 +56,7 @@ const Sidebar = () => {
                 <li className="hover:bg-slate-100 transition-colors duration-300 px-2 rounded-md">
                     <NavLink
                         to='/toys'
+                        onClick={() => context.setSearchByCategory("toys")}
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
@@ -57,6 +66,7 @@ const Sidebar = () => {
                 <li className="hover:bg-slate-100 transition-colors duration-300 px-2 rounded-md">
                     <NavLink
                         to='/others'
+                        onClick={() => context.setSearchByCategory("others")}
                         className={({ isActive }) =>
                             isActive ? activeStyle : undefined
                         }>
